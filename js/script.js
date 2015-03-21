@@ -33,14 +33,14 @@ sklad.open(dbName, {
     }
 
     // Pseudocode
-    var rist = document.getElementsByTagName("li");
-    for (each item in the list in ul){
-      for(var i=0;i<=food.length;i++){
-        if (description[i] == food[j]){
-          $li[i].attr('class', 'keyword');
-        }
-      }
-    }
+    // var rist = document.getElementsByTagName("li");
+    // for (each item in the list in ul){
+    //   for(var i=0;i<=food.length;i++){
+    //     if (description[i] == food[j]){
+    //       $li[i].attr('class', 'keyword');
+    //     }
+    //   }
+    // }
 
     // Add to the ul list.
     function updateRows(conn) {
@@ -76,11 +76,11 @@ sklad.open(dbName, {
         return;
       }
       // Pseudocode
-      for(var i=0;i<=food.length;i++){
-        if ($description.val().trim() == food[i]){
-          $li[i].attr('class', 'keyword');
-        }
-      }
+      // for(var i=0;i<=food.length;i++){
+      //   if ($description.val().trim() == food[i]){
+      //     $li[i].attr('class', 'keyword');
+      //   }
+      // }
       
       conn.insert({
         todos: [
