@@ -21,6 +21,16 @@ trait GroceryListService extends HttpService {
     } ~
     path("list") {
       showList()
+    } ~
+    path("json") {
+      respondWithMediaType(`application/json`) {
+        complete {
+          """{"this": "json", "my":"word", "hi":23}
+            |
+          """.stripMargin
+        }
+
+      }
     }
 
   def showIndex(): routing.Route = {
