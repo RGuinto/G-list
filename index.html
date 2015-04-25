@@ -1,29 +1,65 @@
-<!-- Grocery List from http://codepen.io/jpokusa/pen/GBysb-->
+<!-- Grocery List from http://codepen.io/Russbrown/pen/IgBuh-->
 <!doctype html>
 
-<html>
-
+<html ng-app>
   <head>
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script type="text/javascript" ng:autobind src="http://code.angularjs.org/0.9.16/angular-0.9.16.js"></script>
-  
-    
-  <link href="index.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
-  		<pre id="layer"></pre>
-	    <input type='text' id='description'> <button id='add'>Add</button>
+    <div class="app">
+      <div class="main">
+        <div class="todo-wrapper" ng-controller="TodoCtrl">
+          <div class="header">
+            <h1>Grocery List</h1>
+          </div>
 
-	    <ul id='list'>
-	    	<!-- <li class="keyword"> ORANGE </li> -->
-	    </ul>
+          <div class="main-content">
 
-	    <script src='js/sklad.js'></script>
-	    <script src='js/zepto.js'></script>
-	    <script src='js/script.js'></script>
-	    <!--<script src="js/main.js"></script>-->
+            <form>
+              <input class="add-input" placeholder="Add an item" type="text" ng-model="formTodoText" ng-model-instant />
+              <button class="add-btn" ng-click="addTodo()">+</button>
+            </form>
 
-		<script src="prefixfree-gh-pages/prefixfree.min.js" type="application/javascript"></script>
-	</body>
+            <h2><span class="emphasis">{{getTotalTodos()}}</span> items to buy</h2>
+            <ul id="sortable" class="gallery ui-helper-reset ui-helper-clearfix">
+              <li id="draggable" ng-repeat="todo in todos" ng-class="todo.classes">
+                <input type="checkbox" ng-model="todo.done"/>
+                <!--Using ng-class to add the .fruits class whenever the Fruits() method return true-->
+                <span ng-class="{'fruits': Fruits(todo.text)}" class="done-{{todo.done}}">{{todo.text}}</span>
+                <span ng-class="{'meat': Meat(todo.text)}" class="done-{{todo.done}}"></span>
+                <span ng-class="{'veggies': Veggies(todo.text)}" class="done-{{todo.done}}"></span>
+                <span ng-class="{'clothing': Clothing(todo.text)}" class="done-{{todo.done}}"></span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- <button class="clear-btn" ng-click="clearCompleted()">Completed</button> -->
+          <div class="footer">
+            <div id="trash" ng-click="clearCompleted()" class="ui-widget-header">
+  			     <img ng-click="clearCompleted()" src="img/trash.png">
+  		      </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="prefixfree-gh-pages/prefixfree.min.js" type="application/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    
+    <script src="//use.edgefonts.net/vast-shadow:n4:all.js"></script>
+    <script src="//use.edgefonts.net/vast-shadow:n4:all;megrim.js"></script>
+    <script src='js/script.js'></script>
+    <script src='jquery-ui-1.10.4.custom/js/jquery-1.10.2.js'></script>
+    <!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>-->
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!--touch punch for mobile draggable-->
+    <script src="jquery-ui-1.10.4.custom/jquery.ui.touch-punch.min.js"></script>
+
+  </body>
+  
 </html>
