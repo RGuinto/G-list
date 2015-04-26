@@ -1,103 +1,199 @@
-* {
-  outline:none;
-	border:none;
-	margin:0em;
-	padding:0em;
-	font-family:Courier, monospace;
-}
-body {
-	background:#333 url(http://static.tumblr.com/maopbtg/a5emgtoju/inflicted.png) repeat;        
+body{
+	font-family: 'Lato', sans-serif;
+	margin: 0;
+	width: 100%;
+	height: auto;
 }
 
-/*
-styles for the pre tag
-#layer {
-	font-family: monospace;
-	font-size: 12px;
-	line-height: 20px;
-	
-	border: 1px solid #ccc;
-	background: linear-gradient(white, white 19px, #ddd 19px, #ddd 20px);
-	background-size: 20px 20px;
-	
-	padding: 20px 30px;
-	
-	white-space: pre-wrap; /*to wrap words*/
-	word-wrap: break-word; /*IE 5.5+*/
+.app{
+	width: 100%;
+	height: auto;
+	position: relative;
 }
 
-#text {
-	width:500px;
-	overflow:hidden;
-	background-color:#FFF;
-	color:#222;
-	font-family:Courier, monospace;
-	font-weight:normal;
-	font-size:24px;
-	resize:none;
-	line-height:40px;
-	padding-left:100px;
-	padding-right:100px;
-	padding-top:45px;
-	padding-bottom:34px;
-	background-image:url(images/lines.png), url(http://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
-	background-repeat:repeat-y, repeat;
-	-webkit-border-radius:12px;
-	border-radius:12px;
-	-webkit-box-shadow: 0px 2px 14px #000;
-	box-shadow: 0px 2px 14px #000;
-	border-top:1px solid #FFF;
-	border-bottom:1px solid #FFF;
-	
-}
-#title {
-	background-color:transparent;
-	border-bottom:3px solid #FFF;
-	color:#FFF;
-	font-size:20px;
-	font-family:Courier, monospace;
-	height:28px;
-	font-weight:bold;
-	width:220px;
-}
-#button {
-	cursor:pointer;
-	margin-top:20px;
-	float:right;
-	height:40px;
-	padding-left:24px;
-	padding-right:24px;
-	font-family:Arial, Helvetica, sans-serif;
-	font-weight:bold;
-	font-size:20px;
-	color:#FFF;
-	text-shadow: 0px -1px 0px #000000;
-	-webkit-border-radius:8px;
-	border-radius:8px;
-	border-top:1px solid #FFF;
-	-webkit-box-shadow: 0px 2px 14px #000;
-	box-shadow: 0px 2px 14px #000;
-	background-color: #62add6;
-	background-image:url(http://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
-	background-repeat:repeat-x;
-}
-#button:active {
-	zoom: 1;
-	filter: alpha(opacity=80);
-	opacity: 0.8;
-}
-#button:focus {
-	zoom: 1;
-	filter: alpha(opacity=80);
-	opacity: 0.8;
-}
-#wrapper {
-	width:700px;
-	height:auto;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:24px;
-	margin-bottom:100px;
+.main{
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
 }
 
-.keyword {color: purple; font-weight: bold;}
+.main-content{
+	width: 100%;
+	height: auto;
+	margin-top: 5em;
+}
+
+.todo-wrapper{
+	width: 100%;
+	height: auto;
+}
+
+.header{
+	width: 100%;
+	height: 4em;
+	background: rgb(0, 122, 255);
+	position: fixed;
+	top: 0;
+	left: 0;
+	color: #fff;
+}
+
+form{
+	width: 100%;
+	padding-left: 0.3em;
+}
+
+h1{
+	font-weight: 700;
+	text-align: center;
+	margin: 0;
+	padding: 0.4em;
+}
+
+h2{
+	font-weight: 300;
+	font-size: 1.5em;
+}
+
+ul{
+	list-style-type: none;
+	padding: 0;
+}
+
+.add-input{
+	color: #cacaca;
+	padding: 0.7em;
+	border: 1px solid #cacaca;
+	outline: 0;
+	width: 50%;
+}
+
+button{
+	color: #fff;
+	background: rgb(0, 122, 255);
+	border: 1px solid rgb(0, 122, 255);
+	padding: 0.5em 2em;
+	text-transform: uppercase;
+	cursor: pointer;
+	outline: 0;
+}
+
+button:hover, button:active{
+	color: rgb(0, 122, 255);
+	background: #fff;
+	transition: color 0.5s ease-in-out;
+	transition: background 0.5s ease-in-out;
+}
+
+li{
+	background: #b0e0e6;
+	margin: 1em 0;
+	padding: 1em;
+}
+
+.footer{
+	width: 100%;
+	height: 2em;
+	display: block;
+	position: fixed;
+
+	background: rgb(0, 122, 255);
+	color: #fff;
+	bottom: 0;
+	left: 0;
+
+	padding: 0.5em;
+}
+
+#trash{
+	width: 10%;
+	height: auto;
+	float: right;
+	margin-right: 1.5em;
+}
+
+#trash img{
+	width: 20%;
+	height: auto;
+	float: right;
+	vertical-align: middle;
+}
+
+.meat {background: #FF6666; color: #000; font-weight: 500;}
+.fruits {background: #FFFF66; color: #000; font-weight: 500;}
+.veggies {background: #66FF66; color: #000; font-weight: 500;}
+.random {color: #000; background: #e0e6b0;}
+.clothing {background: #CCCCFF; color: #000; font-weight: 500;}
+
+ #trash-can { 
+ 	float: left; 
+ 	width: 150px; 
+ 	min-height: 50px; 
+ 	padding: 0.5em; 
+ 	margin: 8px 10px 8px 20px; 
+ 	cursor: hand; 
+ 	cursor: pointer; 
+ 	border: 1px dotted red; 
+ }
+
+ #droppable { 
+ 	width: 150px; 
+ 	height: 150px; 
+ 	padding: 0.5em; 
+ 	float: left; 
+ 	margin: 10px; 
+ }
+
+/*#trash {
+	background-color: green;
+	float: right;
+	 width: 32%; 
+	 min-height: 18em; 
+	 padding: 1%; 
+}*/
+
+@media (max-width: 40em){
+	.main{
+		margin: 0;
+		width: 100%;
+	}
+
+	#trash{
+		width: 7%;
+		height: auto;
+		float: right;
+		padding-right: 1.5em;
+		margin: 0;
+	}
+
+	#trash img{
+		width: 100%;
+		height: auto;
+	}
+
+	.add-input{
+	color: #cacaca;
+	padding: 0.5em;
+	border: 1px solid #cacaca;
+	outline: 0;
+	font-size: 15px;
+	width: 75%;
+	}
+
+	button{
+		color: #fff;
+		background: rgb(0, 122, 255);
+		border: 1px solid rgb(0, 122, 255);
+		padding: 0.6em 2em;
+		text-transform: uppercase;
+		cursor: pointer;
+		outline: 0;
+	}
+
+	button:hover, button:active{
+		color: rgb(0, 122, 255);
+		background: #fff;
+		transition: color 0.5s ease-in-out;
+		transition: background 0.5s ease-in-out;
+	}
+}
